@@ -1,0 +1,1108 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="PostgreSQL 自动创建分区最佳实践, Postgres World">
+    <meta name="description" content="
+本文全网唯一源地址
+PostgreSQL 自动创建分区最佳实践引言分区表是 PostgreSQL 在 10 版本才具有的特性，实际使用中，用户往往需要做到提前创建分区或者按写入的数据实时创建分区。 本文探讨常见的几种自动分区创建方案。
+场">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBY072ENWC"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-JBY072ENWC');
+</script>
+
+
+    <!-- Global site tag - Google Adsense -->
+
+    <script data-ad-client="ca-pub-8169416866187994" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <title>PostgreSQL 自动创建分区最佳实践 | Postgres World</title>
+    <link rel="icon" type="image/png" href="/PostgresWorld/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/PostgresWorld/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/PostgresWorld/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/PostgresWorld/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/PostgresWorld/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/PostgresWorld/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/PostgresWorld/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/PostgresWorld/css/my.css">
+
+    <script src="/PostgresWorld/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/PostgresWorld/atom.xml" title="Postgres World" type="application/atom+xml">
+<link rel="stylesheet" href="/PostgresWorld/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/PostgresWorld/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/PostgresWorld/" class="waves-effect waves-light">
+                    
+                    <img src="/PostgresWorld/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Postgres World</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/PostgresWorld/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/PostgresWorld/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/PostgresWorld/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Postgres World</div>
+        <div class="logo-desc">
+            
+            There's never real despair, but only a lost soul!
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/PostgresWorld/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/PostgresWorld/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/PostgresWorld/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">PostgreSQL 自动创建分区最佳实践</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/PostgresWorld/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/PostgresWorld/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+                                <span class="chip bg-color">最佳实践</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
+                                <span class="chip bg-color">云计算</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/Best-Practice/">
+                                <span class="chip bg-color">Best Practice</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/Cloud-Compute/">
+                                <span class="chip bg-color">Cloud Compute</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/Database/">
+                                <span class="chip bg-color">Database</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/PostgreSQL/">
+                                <span class="chip bg-color">PostgreSQL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-02-13
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://s3.bmp.ovh/imgs/2022/02/cbbb73cf8d1168d2.png" alt="PostgreSQL 最佳实践"></p>
+<p><a href="https://www.slackideas.com/PostgresWorld/2022/02/13/best_practice_auto_partitioning/">本文全网唯一源地址</a></p>
+<h1 id="PostgreSQL-自动创建分区最佳实践"><a href="#PostgreSQL-自动创建分区最佳实践" class="headerlink" title="PostgreSQL 自动创建分区最佳实践"></a>PostgreSQL 自动创建分区最佳实践</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>分区表是 PostgreSQL 在 10 版本才具有的特性，实际使用中，用户往往需要做到提前创建分区或者按写入的数据实时创建分区。 本文探讨常见的几种自动分区创建方案。</p>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>分区表在实际使用中，一般以<strong>时间</strong>字段作为分区键。这里为了简化问题，我们假设分区字段类型为<code>timestamp</code>，分区方式为<code>List of values</code>.</p>
+<p>表结构如下：</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> tab
+<span class="token punctuation">(</span>
+    id   <span class="token keyword">bigint</span> GENERATED ALWAYS <span class="token keyword">AS</span> <span class="token keyword">IDENTITY</span><span class="token punctuation">,</span>
+    ts   <span class="token keyword">timestamp</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token keyword">data</span> <span class="token keyword">text</span>
+<span class="token punctuation">)</span> <span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> LIST <span class="token punctuation">(</span><span class="token punctuation">(</span>ts::<span class="token keyword">date</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> tab_def <span class="token keyword">PARTITION</span> <span class="token keyword">OF</span> tab <span class="token keyword">DEFAULT</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>分区的创建一般分以下两种场景：</p>
+<ol>
+<li>定时提前创建分区</li>
+<li>按需实时创建分区</li>
+</ol>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><h3 id="定时提前创建分区"><a href="#定时提前创建分区" class="headerlink" title="定时提前创建分区"></a>定时提前创建分区</h3><p>定时提前创建分区一般只需要一个定时任务调度工具即可实现，常见的有以下几种：</p>
+<ol>
+<li>使用系统调度器，如 Crontab (Linux, Unix, etc.) 和 Task Scheduler (Windows) ;</li>
+<li>使用数据库内置调度器，如 pg_cron, pg_timetable ;</li>
+<li>使用专门的分区管理插件，如 pg_partman ;</li>
+</ol>
+<h4 id="使用系统调度器"><a href="#使用系统调度器" class="headerlink" title="使用系统调度器"></a>使用系统调度器</h4><p>以 Linux 操作系统为例，每天下午 14 点创建下一天的分区表；</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">></span> /tmp/create_part.sh <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+dateStr=\<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> -d '+1 days' +%Y%m%d<span class="token variable">)</span></span>; 
+psql -c "CREATE TABLE tab_\<span class="token variable">$dateStr</span> (LIKE tab INCLUDING INDEXES); ALTER TABLE tab ATTACH PARTITION tab_\<span class="token variable">$dateStr</span> FOR VALUES IN ('\<span class="token variable">$dateStr</span>')";
+EOF</span>
+
+<span class="token punctuation">(</span>crontab -l 2<span class="token operator">></span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">echo</span> <span class="token string">"0 14 * * * bash /tmp/create_part.sh "</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token function">crontab</span> -
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="使用数据库内置调度器"><a href="#使用数据库内置调度器" class="headerlink" title="使用数据库内置调度器"></a>使用数据库内置调度器</h4><p>以<code>pg_cron</code>为例，每天下午 14 点创建下一天的分区表；</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token operator">OR</span> REPLACE <span class="token keyword">FUNCTION</span> create_tab_part<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">RETURNS</span> <span class="token keyword">integer</span>
+    LANGUAGE plpgsql <span class="token keyword">AS</span>
+$$
+<span class="token keyword">DECLARE</span>
+    dateStr <span class="token keyword">varchar</span><span class="token punctuation">;</span>
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">SELECT</span> to_char<span class="token punctuation">(</span><span class="token keyword">DATE</span> <span class="token string">'tomorrow'</span><span class="token punctuation">,</span> <span class="token string">'YYYYMMDD'</span><span class="token punctuation">)</span> <span class="token keyword">INTO</span> dateStr<span class="token punctuation">;</span>
+    <span class="token keyword">EXECUTE</span>
+        <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'CREATE TABLE tab_%s (LIKE tab INCLUDING INDEXES)'</span><span class="token punctuation">,</span> dateStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">EXECUTE</span>
+        <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'ALTER TABLE tab ATTACH PARTITION tab_%s FOR VALUES IN (%L)'</span><span class="token punctuation">,</span> dateStr<span class="token punctuation">,</span> dateStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">RETURN</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+$$<span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> EXTENSION pg_cron<span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> cron<span class="token punctuation">.</span>schedule<span class="token punctuation">(</span><span class="token string">'0 14 * * *'</span><span class="token punctuation">,</span> $$<span class="token keyword">SELECT</span> create_tab_part<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>$$<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="使用专门的分区管理插件"><a href="#使用专门的分区管理插件" class="headerlink" title="使用专门的分区管理插件"></a>使用专门的分区管理插件</h4><p>以<code>pg_partman</code>为例，每天提前创建下一天的分区表；</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> EXTENSION pg_partman<span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> partman<span class="token punctuation">.</span>create_parent<span class="token punctuation">(</span>p_parent_table <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'public.tab'</span><span class="token punctuation">,</span>
+                             p_control <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'ts'</span><span class="token punctuation">,</span>
+                             p_type <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'native'</span><span class="token punctuation">,</span>
+                             p_interval<span class="token operator">=</span><span class="token operator">></span> <span class="token string">'daily'</span><span class="token punctuation">,</span>
+                             p_premake <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="按需实时创建分区"><a href="#按需实时创建分区" class="headerlink" title="按需实时创建分区"></a>按需实时创建分区</h3><p>有时候，我们需要按数据插入的需要来创建分区，而不是提前预创建。 根据分区是否存在，可以方便地判断该时间区间内有没有数据存在。此时一般采用触发器来实现。</p>
+<p>但仍然有两个问题要解决：</p>
+<ol>
+<li>13及以上版本才提供了针对分区表的<code>BEFORE/FOR EACH ROW</code>触发器。</li>
+</ol>
+<pre class="line-numbers language-bash"><code class="language-bash">ERROR:  <span class="token string">"tab"</span> is a partitioned table
+DETAIL:  Partitioned tables cannot have BEFORE / FOR EACH ROW triggers.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>插入数据时，因为锁表的原因，无法修改分区表定义，即无法ATTACH子表。 因此必须有另一个连接来做 ATTACH 的操作，此处我们想到了用<code>LISTEN/NOTIFY</code>机制来通知另一个连接进行分区定义的修改。</li>
+</ol>
+<pre class="line-numbers language-bash"><code class="language-bash">ERROR:  cannot CREATE TABLE <span class="token punctuation">..</span> PARTITION OF <span class="token string">"tab"</span>
+        because it is being used by active queries <span class="token keyword">in</span> this session
+or
+ERROR:  cannot ALTER TABLE <span class="token string">"tab"</span>
+        because it is being used by active queries <span class="token keyword">in</span> this session
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="触发器-实施子表创建和NOTIFY"><a href="#触发器-实施子表创建和NOTIFY" class="headerlink" title="触发器(实施子表创建和NOTIFY)"></a>触发器(实施子表创建和NOTIFY)</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">FUNCTION</span> part_trig<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">RETURNS</span> <span class="token keyword">trigger</span>
+    LANGUAGE plpgsql <span class="token keyword">AS</span>
+$$
+<span class="token keyword">BEGIN</span>
+    <span class="token keyword">BEGIN</span>
+        <span class="token comment" spellcheck="true">/* try to create a table for the new partition */</span>
+        <span class="token keyword">EXECUTE</span>
+            <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'CREATE TABLE %I (LIKE tab INCLUDING INDEXES)'</span><span class="token punctuation">,</span> <span class="token string">'tab_'</span> <span class="token operator">||</span> to_char<span class="token punctuation">(</span>NEW<span class="token punctuation">.</span>ts<span class="token punctuation">,</span> <span class="token string">'YYYYMMDD'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">/*
+         * tell listener to attach the partition
+         * (only if a new table was created)
+         */</span>
+        <span class="token keyword">EXECUTE</span>
+            <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'NOTIFY tab, %L'</span><span class="token punctuation">,</span> to_char<span class="token punctuation">(</span>NEW<span class="token punctuation">.</span>ts<span class="token punctuation">,</span> <span class="token string">'YYYYMMDD'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    EXCEPTION
+        <span class="token keyword">WHEN</span> duplicate_table <span class="token keyword">THEN</span>
+            <span class="token boolean">NULL</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">-- ignore</span>
+    <span class="token keyword">END</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/* insert into the new partition */</span>
+    <span class="token keyword">EXECUTE</span>
+        <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'INSERT INTO %I VALUES ($1.*)'</span><span class="token punctuation">,</span> <span class="token string">'tab_'</span> <span class="token operator">||</span> to_char<span class="token punctuation">(</span>NEW<span class="token punctuation">.</span>ts<span class="token punctuation">,</span> <span class="token string">'YYYYMMDD'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">USING</span> NEW<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/* skip insert into the partitioned table */</span>
+    <span class="token keyword">RETURN</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
+$$<span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> part_trig
+    BEFORE <span class="token keyword">INSERT</span>
+    <span class="token keyword">ON</span> TAB
+    <span class="token keyword">FOR EACH ROW</span>
+    <span class="token keyword">WHEN</span> <span class="token punctuation">(</span>pg_trigger_depth<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">EXECUTE</span> <span class="token keyword">FUNCTION</span> part_trig<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="代码-实施LISTEN和子表ATTACH"><a href="#代码-实施LISTEN和子表ATTACH" class="headerlink" title="代码(实施LISTEN和子表ATTACH)"></a>代码(实施LISTEN和子表ATTACH)</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#! /usr/bin/env python3.9</span>
+<span class="token comment" spellcheck="true"># encoding:utf8</span>
+<span class="token keyword">import</span> asyncio
+
+<span class="token keyword">import</span> psycopg2
+<span class="token keyword">from</span> psycopg2<span class="token punctuation">.</span>extensions <span class="token keyword">import</span> ISOLATION_LEVEL_AUTOCOMMIT
+
+conn <span class="token operator">=</span> psycopg2<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">'application_name=listener'</span><span class="token punctuation">)</span>
+conn<span class="token punctuation">.</span>set_isolation_level<span class="token punctuation">(</span>ISOLATION_LEVEL_AUTOCOMMIT<span class="token punctuation">)</span>
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>f<span class="token string">'LISTEN tab;'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">attach_partition</span><span class="token punctuation">(</span>table<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> cs<span class="token punctuation">:</span>
+        cs<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">'ALTER TABLE "%s" ATTACH PARTITION "%s_%s" FOR VALUES IN (\'%s\')'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>table<span class="token punctuation">,</span> table<span class="token punctuation">,</span> date<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">handle_notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>poll<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> notify <span class="token keyword">in</span> conn<span class="token punctuation">.</span>notifies<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>notify<span class="token punctuation">.</span>payload<span class="token punctuation">)</span>
+        attach_partition<span class="token punctuation">(</span>notify<span class="token punctuation">.</span>channel<span class="token punctuation">,</span> notify<span class="token punctuation">.</span>payload<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>notifies<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+loop<span class="token punctuation">.</span>add_reader<span class="token punctuation">(</span>conn<span class="token punctuation">,</span> handle_notify<span class="token punctuation">)</span>
+loop<span class="token punctuation">.</span>run_forever<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文介绍了两种场景下自动创建分区的几种解决方案，各有优劣。</p>
+<p>定时提前创建分区场景下的几种解决方案比较简单易懂，但是会依赖<strong>系统</strong>或<strong>插件</strong>的定时管理机制，在运维、迁移时具有额外管理成本。</p>
+<p>按需实时创建分区场景下，能按实际数据规律减少不必要的分区数量，但是也需要<strong>较高版本(&gt;=13)<strong>及</strong>额外连接</strong>来完成，复杂度比较高。</p>
+<p>我们可视自身业务情况，来选择合适的自动创建分区的方式。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/PostgresWorld/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+                                    <span class="chip bg-color">最佳实践</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
+                                    <span class="chip bg-color">云计算</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/Best-Practice/">
+                                    <span class="chip bg-color">Best Practice</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/Cloud-Compute/">
+                                    <span class="chip bg-color">Cloud Compute</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/Database/">
+                                    <span class="chip bg-color">Database</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/PostgreSQL/">
+                                    <span class="chip bg-color">PostgreSQL</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block;">
+                    <link rel="stylesheet" type="text/css" href="/PostgresWorld/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/PostgresWorld/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/PostgresWorld/2022/02/14/weekly_updates_2022w06/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/PostgresWorld/medias/featureimages/14.jpg" class="responsive-img" alt="每周 Postgres 世界动态 2022w06">
+                        
+                        <span class="card-title">每周 Postgres 世界动态 2022w06</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Postgres World
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
+                        <span class="chip bg-color">云计算</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Cloud-Compute/">
+                        <span class="chip bg-color">Cloud Compute</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Database/">
+                        <span class="chip bg-color">Database</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/PostgreSQL/">
+                        <span class="chip bg-color">PostgreSQL</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/%E6%AF%8F%E5%91%A8%E5%8A%A8%E6%80%81/">
+                        <span class="chip bg-color">每周动态</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Weekly-Update/">
+                        <span class="chip bg-color">Weekly Update</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/PostgresWorld/2022/02/07/weekly_updates_2022w05/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/PostgresWorld/medias/featureimages/13.jpg" class="responsive-img" alt="每周 Postgres 世界动态 2022w05">
+                        
+                        <span class="card-title">每周 Postgres 世界动态 2022w05</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Postgres World
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
+                        <span class="chip bg-color">云计算</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Cloud-Compute/">
+                        <span class="chip bg-color">Cloud Compute</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Database/">
+                        <span class="chip bg-color">Database</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/PostgreSQL/">
+                        <span class="chip bg-color">PostgreSQL</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/%E6%AF%8F%E5%91%A8%E5%8A%A8%E6%80%81/">
+                        <span class="chip bg-color">每周动态</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Weekly-Update/">
+                        <span class="chip bg-color">Weekly Update</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/PostgresWorld/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/PostgresWorld/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/PostgresWorld/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/PostgresWorld/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/PostgresWorld/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/PostgresWorld/about" target="_blank">Postgres World</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "1";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+                <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280780840'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1280780840%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/PostgresWorld/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/PostgresWorld/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/PostgresWorld/libs/materialize/materialize.min.js"></script>
+    <script src="/PostgresWorld/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/PostgresWorld/libs/aos/aos.js"></script>
+    <script src="/PostgresWorld/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/PostgresWorld/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/PostgresWorld/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/PostgresWorld/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <script src="/PostgresWorld/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/PostgresWorld/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
