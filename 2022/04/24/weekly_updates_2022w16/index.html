@@ -4,8 +4,23 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Tag: 最佳实践, Postgres World">
-    <meta name="description" content="Postgres World">
+    <meta name="keywords" content="每周 Postgres 世界动态 2022w16, Postgres World">
+    <meta name="description" content="
+本文全网唯一源地址
+产品新闻信息来源：网址基础上整理。
+
+
+
+时间
+消息
+
+
+
+2022-04-24
+PostGIS 发布新版本2.4.10,2.5.6. PostGIS 是一个面向 PostgreSQL 的空间数据库扩展。
+
+
+博客动态">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +47,7 @@
 
     <script data-ad-client="ca-pub-8169416866187994" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
-    <title>Tag: 最佳实践 | Postgres World</title>
+    <title>每周 Postgres 世界动态 2022w16 | Postgres World</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/libs/awesome/css/all.min.css">
@@ -159,187 +174,439 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                Everything about PostgreSQL
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途！",
-                            
-                                "让我痛苦的，必将为我所用！",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">每周 Postgres 世界动态 2022w16</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
 
 
-    </div>
-</div>
-
-<main class="content">
+<main class="container content">
 
     
-
-<div id="tags" class="container chip-container">
+    <!-- 文章内容详情 -->
+<div id="artDetail">
     <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;Post Tags
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
+                                <span class="chip bg-color">云计算</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/Cloud-Compute/">
+                                <span class="chip bg-color">Cloud Compute</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/Database/">
+                                <span class="chip bg-color">Database</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/PostgreSQL/">
+                                <span class="chip bg-color">PostgreSQL</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/%E6%AF%8F%E5%91%A8%E5%8A%A8%E6%80%81/">
+                                <span class="chip bg-color">每周动态</span>
+                            </a>
+                        
+                            <a href="/PostgresWorld/tags/Weekly-Update/">
+                                <span class="chip bg-color">Weekly Update</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
             </div>
-            <div class="tag-chips">
+
+            <div class="post-info">
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2022-04-24
+                </div>
                 
-                <a href="/PostgresWorld/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" title="最佳实践: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="最佳实践" style="background-color: #F9EBEA;">最佳实践
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
+
                 
+
                 
-                <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="云计算: 17">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="云计算" style="background-color: #F5EEF8;">云计算
-                        <span class="tag-length">17</span>
-                    </span>
-                </a>
+
                 
-                
-                <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库: 17">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="数据库" style="background-color: #D5F5E3;">数据库
-                        <span class="tag-length">17</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/PostgresWorld/tags/Best-Practice/" title="Best Practice: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Best Practice" style="background-color: #E8F8F5;">Best Practice
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/PostgresWorld/tags/Cloud-Compute/" title="Cloud Compute: 17">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Cloud Compute" style="background-color: #FEF9E7;">Cloud Compute
-                        <span class="tag-length">17</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/PostgresWorld/tags/Database/" title="Database: 17">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Database" style="background-color: #F8F9F9;">Database
-                        <span class="tag-length">17</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/PostgresWorld/tags/PostgreSQL/" title="PostgreSQL: 17">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="PostgreSQL" style="background-color: #82E0AA;">PostgreSQL
-                        <span class="tag-length">17</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/PostgresWorld/tags/%E6%AF%8F%E5%91%A8%E5%8A%A8%E6%80%81/" title="每周动态: 16">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="每周动态" style="background-color: #D7BDE2;">每周动态
-                        <span class="tag-length">16</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/PostgresWorld/tags/Weekly-Update/" title="Weekly Update: 16">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Weekly Update" style="background-color: #A3E4D7;">Weekly Update
-                        <span class="tag-length">16</span>
-                    </span>
-                </a>
+
                 
             </div>
         </div>
-    </div>
-</div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p>
+<p><a href="https://www.slackideas.com/PostgresWorld/2022/04/24/weekly_updates_2022w16/">本文全网唯一源地址</a></p>
+<h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a target="_blank" rel="noopener" href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p>
+<table>
+<thead>
+<tr>
+<th align="left">时间</th>
+<th align="left">消息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">2022-04-24</td>
+<td align="left">PostGIS 发布新版本<a target="_blank" rel="noopener" href="https://postgis.net/2022/04/24/postgis-2.4.10/">2.4.10</a>,<a target="_blank" rel="noopener" href="https://postgis.net/2022/04/21/postgis-2.5.6/">2.5.6</a>. PostGIS 是一个面向 PostgreSQL 的空间数据库扩展。</td>
+</tr>
+</tbody></table>
+<h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a target="_blank" rel="noopener" href="https://planet.postgresql.org/">网址</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">作者</th>
+<th align="left">文章</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Ryan Lambert</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://blog.rustprooflabs.com/2022/04/postgis-h3-intro">在 PostGIS 中使用 Uber H3 HEX Grid</a></td>
+</tr>
+<tr>
+<td align="left">(<strong>EDB</strong>)Akshay Joshi</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.enterprisedb.com/blog/use-master-password-pgadmin-4">pgAdmin 4 中主密码的使用</a></td>
+</tr>
+<tr>
+<td align="left">(<strong>CrunchyData</strong>)Andrew L’Ecuyer</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://blog.crunchydata.com/blog/introducing-pgo-the-open-source-postgres-operator-from-crunchy-data-version-5.1">PGO 5.1 全新版本&amp;强大功能</a></td>
+</tr>
+<tr>
+<td align="left">(<strong>EDB</strong>)Shaun M. Thomas</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.enterprisedb.com/blog/steady-storage-stampede">Steady Storage Stampede</a></td>
+</tr>
+<tr>
+<td align="left">(<strong>Fujitsu</strong>)Ajin Cherian</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.postgresql.fastware.com/blog/two-phase-commits-for-logical-replication-publications-subscriptions">发布订阅的两阶段提交</a></td>
+</tr>
+<tr>
+<td align="left">Bruce Momjian</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://momjian.us/main/blogs/pgblog/2022.html#April_20_2022">微服务世界中的 PostgreSQL </a></td>
+</tr>
+</tbody></table>
+<h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li>
+<li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li>
+<li><a target="_blank" rel="noopener" href="https://support.huaweicloud.com/en-us/wtsnew-rds/">News - HuaweiCloud RDS</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">厂商</th>
+<th align="left">动态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Google Cloud Platform</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">Alibaba Cloud</td>
+<td align="left">新通用型规格新增支持创建只读实例。</td>
+</tr>
+<tr>
+<td align="left">Azure</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">AWS</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">HuaweiCloud</td>
+<td align="left">无</td>
+</tr>
+<tr>
+<td align="left">TencentCloud</td>
+<td align="left">无</td>
+</tr>
+</tbody></table>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
+                                    <span class="chip bg-color">云计算</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/Cloud-Compute/">
+                                    <span class="chip bg-color">Cloud Compute</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/Database/">
+                                    <span class="chip bg-color">Database</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/PostgreSQL/">
+                                    <span class="chip bg-color">PostgreSQL</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/%E6%AF%8F%E5%91%A8%E5%8A%A8%E6%80%81/">
+                                    <span class="chip bg-color">每周动态</span>
+                                </a>
+                            
+                                <a href="/PostgresWorld/tags/Weekly-Update/">
+                                    <span class="chip bg-color">Weekly Update</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/libs/share/js/social-share.min.js"></script>
+    
 
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="最佳实践, 云计算, 数据库, Best Practice, Cloud Compute, Database, PostgreSQL" data-aos="fade-up">
-                <div class="card">
-                    <a href="/PostgresWorld/2022/02/13/best_practice_auto_partitioning/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/medias/featureimages/23.jpg" class="responsive-img" alt="PostgreSQL 自动创建分区最佳实践">
-                            
-                            <span class="card-title">PostgreSQL 自动创建分区最佳实践</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Postgres World
-                                
-                            </span>
-                        </div>
-                    </div>
+</div>
+
                 </div>
             </div>
             
         </div>
-    </article>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/PostgresWorld/2022/04/24/weekly_updates_2022w16/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/medias/featureimages/21.jpg" class="responsive-img" alt="每周 Postgres 世界动态 2022w16">
+                        
+                        <span class="card-title">每周 Postgres 世界动态 2022w16</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Postgres World
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
+                        <span class="chip bg-color">云计算</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Cloud-Compute/">
+                        <span class="chip bg-color">Cloud Compute</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Database/">
+                        <span class="chip bg-color">Database</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/PostgreSQL/">
+                        <span class="chip bg-color">PostgreSQL</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/%E6%AF%8F%E5%91%A8%E5%8A%A8%E6%80%81/">
+                        <span class="chip bg-color">每周动态</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Weekly-Update/">
+                        <span class="chip bg-color">Weekly Update</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/PostgresWorld/2022/04/17/weekly_updates_2022w15/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/medias/featureimages/20.jpg" class="responsive-img" alt="每周 Postgres 世界动态 2022w15">
+                        
+                        <span class="card-title">每周 Postgres 世界动态 2022w15</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Postgres World
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">
+                        <span class="chip bg-color">云计算</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Cloud-Compute/">
+                        <span class="chip bg-color">Cloud Compute</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Database/">
+                        <span class="chip bg-color">Database</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/PostgreSQL/">
+                        <span class="chip bg-color">PostgreSQL</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/%E6%AF%8F%E5%91%A8%E5%8A%A8%E6%80%81/">
+                        <span class="chip bg-color">每周动态</span>
+                    </a>
+                    
+                    <a href="/PostgresWorld/tags/Weekly-Update/">
+                        <span class="chip bg-color">Weekly Update</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/libs/codeBlock/codeBlockFuction.min.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/libs/codeBlock/codeLang.min.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/libs/codeBlock/codeCopy.min.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/caiski/PostgresWorld/libs/codeBlock/codeShrink.min.js"></script>
+
+
+    
+
 </main>
 
 
