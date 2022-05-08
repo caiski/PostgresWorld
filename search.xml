@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>每周 Postgres 世界动态 2022w18</title>
+      <link href="/PostgresWorld/2022/05/08/weekly_updates_2022w18/"/>
+      <url>/PostgresWorld/2022/05/08/weekly_updates_2022w18/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/05/08/weekly_updates_2022w18/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-05-06</td><td align="left">PostgreSQL JDBC 发布新版本<a href="https://www.postgresql.org/about/news/postgresql-jdbc-4235-released-2447/">42.3.5</a>.</td></tr><tr><td align="left">2022-05-06</td><td align="left">pg_stat_monitor 发布<a href="https://percona.github.io/pg_stat_monitor/REL1_0_STABLE/">正式版本</a>. pg_stat_monitor 是一个 Percona 推出的 PostgreSQL 查询性能监控工具。</td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead><tbody><tr><td align="left">(<strong>Highgo</strong>)cary huang</td><td align="left"><a href="https://www.highgo.ca/2022/05/06/atomic-commit-with-2-phase-commit-in-fdw-distributed-setup/">Atomic Commit with 2 Phase Commit in FDW Distributed Setup</a></td></tr><tr><td align="left">(<strong>Percona</strong>)Matt Yonkovit</td><td align="left"><a href="https://www.percona.com/blog/understand-your-postgresql-workloads-better-with-pg_stat_monitor/">Understand Your PostgreSQL Workloads Better with pg_stat_monitor</a></td></tr><tr><td align="left">(<strong>CrunchyData</strong>)Andrew L’Ecuyer</td><td align="left"><a href="https://www.crunchydata.com/blog/seamless-pgadmin-4-deployments-using-pgo-v5.1">Seamless pgAdmin 4 Deployments Using PGO v5.1</a></td></tr><tr><td align="left">(<strong>CrunchyData</strong>)Paul Ramsey</td><td align="left"><a href="https://www.crunchydata.com/blog/parquet-and-postgres-in-the-data-lake">Parquet and Postgres in the Data Lake</a></td></tr><tr><td align="left">(<strong>Timescale</strong>)Ryan Booz</td><td align="left"><a href="https://www.timescale.com/blog/point-in-time/">Point-in-Time PostgreSQL Database and Query Monitoring With pg_stat_statements</a></td></tr><tr><td align="left">Andreas Scherbaum</td><td align="left"><a href="https://postgr.es/p/5kA">It’s beer o’clock for PostgreSQL</a></td></tr><tr><td align="left">(<strong>Cybertec</strong>)Hans-Juergen Schoenig</td><td align="left"><a href="https://postgr.es/p/5kz">PostgreSQL 15: Using MERGE in SQL</a></td></tr><tr><td align="left">(<strong>EnterpriseDB</strong>)Robert Haas</td><td align="left"><a href="http://rhaas.blogspot.com/2022/05/parallel-server-side-backup-compression.html">Parallel Server-Side Backup Compression</a></td></tr><tr><td align="left">Andreas ‘ads’ Scherbaum</td><td align="left"><a href="https://postgresql.life/post/abbas_butt/">PostgreSQL 每周人物：Abbas Butt</a></td></tr></tbody></table><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/en-us/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">新增地域 europe-west9 (Paris)</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">新增支持数据库代理，提供自动读写分离功能。</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周 Postgres 世界动态 2022w17</title>
       <link href="/PostgresWorld/2022/05/01/weekly_updates_2022w17/"/>
       <url>/PostgresWorld/2022/05/01/weekly_updates_2022w17/</url>
