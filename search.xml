@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>每周 Postgres 世界动态 2022w19</title>
+      <link href="/PostgresWorld/2022/05/15/weekly_updates_2022w19/"/>
+      <url>/PostgresWorld/2022/05/15/weekly_updates_2022w19/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/05/15/weekly_updates_2022w19/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-05-15</td><td align="left"><a href="https://www.postgresql.org/about/news/pgadmin-4-v69-released-2450/">pgAdmin 4 v6.9 Released</a></td></tr><tr><td align="left">2022-05-12</td><td align="left"><a href="https://www.postgresql.org/about/news/postgresql-143-137-1211-1116-and-1021-released-2449/">PostgreSQL 14.3, 13.7, 12.11, 11.16, and 10.21 Released!</a></td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead><tbody><tr><td align="left">Frits Hoogland</td><td align="left"><a href="https://postgr.es/p/5l3">When are you running too much on linux?</a></td></tr><tr><td align="left">Yugo Nagata</td><td align="left"><a href="https://postgr.es/p/5l2">pg_ivm 1.0 released!</a></td></tr><tr><td align="left">Egor Rogov</td><td align="left"><a href="https://postgr.es/p/5l7">Queries in PostgreSQL: 4. Index scan</a></td></tr><tr><td align="left">Shaun M. Thomas</td><td align="left"><a href="https://postgr.es/p/5l4">PG Phriday: What You Should Know About Basic Postgres Authentication</a></td></tr><tr><td align="left">Keith Fiske</td><td align="left"><a href="https://postgr.es/p/5k-">The Vectors of Database Encryption</a></td></tr><tr><td align="left">Tatsuo Ishii</td><td align="left"><a href="https://postgr.es/p/5kV">PostgreSQL supports COPY FREEZE in pgbench but it will not appear in the release note</a></td></tr><tr><td align="left">Luca Ferrari</td><td align="left"><a href="https://postgr.es/p/5kY">pgenv <code>switch</code></a></td></tr><tr><td align="left">Nikhil Mohite</td><td align="left"><a href="https://postgr.es/p/5kX">Query Tool vs View/Edit Data</a></td></tr><tr><td align="left">Gabriele Bartolini</td><td align="left"><a href="https://postgr.es/p/5l6">Introducing CloudNativePG: A New Open Source Kubernetes Operator for Postgres</a></td></tr><tr><td align="left">Laurenz Albe</td><td align="left"><a href="https://postgr.es/p/5kU">Time zone management in PostgreSQL</a></td></tr><tr><td align="left">Andreas ‘ads’ Scherbaum</td><td align="left"><a href="https://postgr.es/p/5kT">Abhijit Menon-Sen</a></td></tr></tbody></table><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/en-us/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">无</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">无</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周 Postgres 世界动态 2022w18</title>
       <link href="/PostgresWorld/2022/05/08/weekly_updates_2022w18/"/>
       <url>/PostgresWorld/2022/05/08/weekly_updates_2022w18/</url>

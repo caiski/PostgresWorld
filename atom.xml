@@ -6,7 +6,7 @@
   <link href="https://www.slackideas.com/PostgresWorld/atom.xml" rel="self"/>
   
   <link href="https://www.slackideas.com/PostgresWorld/"/>
-  <updated>2022-05-08T13:13:48.643Z</updated>
+  <updated>2022-05-20T14:26:30.154Z</updated>
   <id>https://www.slackideas.com/PostgresWorld/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周 Postgres 世界动态 2022w19</title>
+    <link href="https://www.slackideas.com/PostgresWorld/2022/05/15/weekly_updates_2022w19/"/>
+    <id>https://www.slackideas.com/PostgresWorld/2022/05/15/weekly_updates_2022w19/</id>
+    <published>2022-05-15T05:00:22.135Z</published>
+    <updated>2022-05-20T14:26:30.154Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+    <category term="云计算" scheme="https://www.slackideas.com/PostgresWorld/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+    <category term="数据库" scheme="https://www.slackideas.com/PostgresWorld/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="Cloud Compute" scheme="https://www.slackideas.com/PostgresWorld/tags/Cloud-Compute/"/>
+    
+    <category term="Database" scheme="https://www.slackideas.com/PostgresWorld/tags/Database/"/>
+    
+    <category term="PostgreSQL" scheme="https://www.slackideas.com/PostgresWorld/tags/PostgreSQL/"/>
+    
+    <category term="每周动态" scheme="https://www.slackideas.com/PostgresWorld/tags/%E6%AF%8F%E5%91%A8%E5%8A%A8%E6%80%81/"/>
+    
+    <category term="Weekly Update" scheme="https://www.slackideas.com/PostgresWorld/tags/Weekly-Update/"/>
+    
+  </entry>
   
   <entry>
     <title>每周 Postgres 世界动态 2022w18</title>
