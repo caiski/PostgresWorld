@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>每周 Postgres 世界动态 2022w20</title>
+      <link href="/PostgresWorld/2022/05/22/weekly_updates_2022w20/"/>
+      <url>/PostgresWorld/2022/05/22/weekly_updates_2022w20/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/05/22/weekly_updates_2022w20/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-05-21</td><td align="left"><a href="https://www.postgresql.org/about/news/postgresql-anonymizer-10-privacy-by-design-for-postgres-2452/">PostgreSQL Anonymizer 1.0: Privacy By Design For Postgres</a></td></tr><tr><td align="left">2022-05-19</td><td align="left"><a href="https://www.postgresql.org/about/news/postgresql-15-beta-1-released-2453/">PostgreSQL 15 Beta 1 Released!</a></td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead><tbody><tr><td align="left">Frits Hoogland</td><td align="left"><a href="https://postgr.es/p/5ln">ssh and ‘warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory’</a></td></tr><tr><td align="left">Regina Obe</td><td align="left"><a href="https://postgr.es/p/5lm">PostGIS 3.3.0alpha1</a></td></tr><tr><td align="left">David Christensen</td><td align="left"><a href="https://postgr.es/p/5ll">Postgres Query Optimization: LEFT JOIN vs UNION ALL</a></td></tr><tr><td align="left">David Rowley</td><td align="left"><a href="https://postgr.es/p/5li">Speeding up sort performance in Postgres 15</a></td></tr><tr><td align="left">Paul Ramsey</td><td align="left"><a href="https://postgr.es/p/5lh">Instant Heatmap with pg_featureserv</a></td></tr><tr><td align="left">Devrim GÜNDÜZ</td><td align="left"><a href="https://postgr.es/p/5lf">How to install PostgreSQL 14, 13, 12, 11 and 10 to Red Hat Enterprise Linux 9</a></td></tr><tr><td align="left">Anthony Sotolongo León</td><td align="left"><a href="https://postgr.es/p/5lg">Solving PostgreSQL’s planner issues due to statistics missing chunks</a></td></tr><tr><td align="left">Craig Kerstiens</td><td align="left"><a href="https://postgr.es/p/5le">Unfinished Business with Postgres</a></td></tr><tr><td align="left">Francisco Figueiredo Jr</td><td align="left"><a href="https://postgr.es/p/5la">Happy 20th Anniversary, Npgsql!</a></td></tr><tr><td align="left">Ian Barwick</td><td align="left"><a href="https://postgr.es/p/5lc">Fini for _PG_fini(): recent changes in shared library coding</a></td></tr><tr><td align="left">Bruce Momjian</td><td align="left"><a href="https://postgr.es/p/5l8">Postgres 15 Release Notes</a></td></tr><tr><td align="left">Andreas ‘ads’ Scherbaum</td><td align="left"><a href="https://postgr.es/p/5l9">Haki Benita</a></td></tr></tbody></table><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/en-us/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">无</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">无</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周 Postgres 世界动态 2022w19</title>
       <link href="/PostgresWorld/2022/05/15/weekly_updates_2022w19/"/>
       <url>/PostgresWorld/2022/05/15/weekly_updates_2022w19/</url>
