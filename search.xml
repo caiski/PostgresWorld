@@ -4,6 +4,68 @@
   
     
     <entry>
+      <title>每周 Postgres 世界动态 2022w24</title>
+      <link href="/PostgresWorld/2022/06/19/weekly_updates_2022w24/"/>
+      <url>/PostgresWorld/2022/06/19/weekly_updates_2022w24/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/06/19/weekly_updates_2022w24/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-06-16</td><td align="left"><a href="https://www.postgresql.org/about/news/postgresql-144-released-2470/">PostgreSQL 14.4 Released!</a></td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead><tbody><tr><td align="left">Adam Johnson</td><td align="left"><a href="https://postgr.es/p/5mg">How to Find and Stop Running Queries on PostgreSQL</a></td></tr><tr><td align="left">Marco Slot(<strong>citusdata</strong>)</td><td align="left"><a href="https://postgr.es/p/5mf">Citus 11 for Postgres goes fully open source, with query from any node</a></td></tr><tr><td align="left">David Fetter</td><td align="left"><a href="https://postgr.es/p/5me">Beyond the Single PostgreSQL Node, Part One</a></td></tr><tr><td align="left">Takamichi Osumi(<strong>Fujitsu</strong>)</td><td align="left"><a href="https://postgr.es/p/5m9">Addressing logical replication conflicts using ALTER SUBSCRIPTION SKIP</a></td></tr><tr><td align="left">Laurenz Albe(<strong>Cybertec</strong>)</td><td align="left"><a href="https://postgr.es/p/5m8">Case-insensitive pattern matching in PostgreSQL</a></td></tr><tr><td align="left">Joshua Drake(<strong>CommmandPrompt</strong>)</td><td align="left"><a href="https://postgr.es/p/5m7">Postgres, where art thou?</a></td></tr><tr><td align="left">Pavlo Golub(<strong>Cybertec</strong>)</td><td align="left"><a href="https://postgr.es/p/5m6">Migrate scheduled jobs to pg_timetable from pg_cron</a></td></tr><tr><td align="left">Bruce Momjian</td><td align="left"><a href="https://postgr.es/p/5m3">Researching Upgrade Changes</a></td></tr><tr><td align="left">Akhil Reddy Banappagari(<strong>MigOps</strong>)</td><td align="left"><a href="https://postgr.es/p/5m2">Oracle vs PostgreSQL – Transaction control statements</a></td></tr><tr><td align="left">Christopher Winslett(<strong>CrunchyData</strong>)</td><td align="left"><a href="https://postgr.es/p/5m4">Phases of Database Growth and Cost</a></td></tr><tr><td align="left">Andreas ‘ads’ Scherbaum(<strong>Community</strong>)</td><td align="left"><a href="https://postgr.es/p/5m1">Vigneshwaran C</a></td></tr><tr><td align="left">Paul Ramsey</td><td align="left"><a href="https://postgr.es/p/5mk">Who are the Biggest PostGIS Users?</a></td></tr></tbody></table><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/en-us/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">无</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">无</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr><tr><td align="left"></td><td align="left"></td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>每周 Postgres 世界动态 2022w23</title>
+      <link href="/PostgresWorld/2022/06/12/weekly_updates_2022w23/"/>
+      <url>/PostgresWorld/2022/06/12/weekly_updates_2022w23/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/06/12/weekly_updates_2022w23/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-06-09</td><td align="left"><a href="https://www.postgresql.org/about/news/postgresql-14-out-of-cycle-release-coming-june-16-2022-2466/">PostgreSQL 14 out-of-cycle release coming June 16, 2022</a></td></tr><tr><td align="left">2022-06-06</td><td align="left"><a href="https://www.postgresql.org/about/news/cloudnativepg-1151-released-2465/">CloudNativePG 1.15.1 Released!</a></td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead><tbody><tr><td align="left">Andreas Scherbaum</td><td align="left"><a href="https://postgr.es/p/5m0">My PostgreSQL database is empty!</a></td></tr><tr><td align="left">cary huang(<strong>High Go</strong>)</td><td align="left"><a href="https://postgr.es/p/5l_">Understand PG’s MVCC Visibility Basic Check Rules</a></td></tr></tbody></table><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/en-us/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">无</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">无</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr><tr><td align="left"></td><td align="left"></td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周 Postgres 世界动态 2022w22</title>
       <link href="/PostgresWorld/2022/06/05/weekly_updates_2022w22/"/>
       <url>/PostgresWorld/2022/06/05/weekly_updates_2022w22/</url>
@@ -26,7 +88,7 @@
             
             <tag> 每周动态 </tag>
             
-            <tag> Weekly Updatez </tag>
+            <tag> Weekly Update </tag>
             
         </tags>
       
