@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>每周 Postgres 世界动态 2022w25</title>
+      <link href="/PostgresWorld/2022/06/26/weekly_updates_2022w25/"/>
+      <url>/PostgresWorld/2022/06/26/weekly_updates_2022w25/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/06/26/weekly_updates_2022w25/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-06-23</td><td align="left"><a href="https://www.postgresql.org/about/news/parquet-s3-fdw-030-released-2474/">Parquet S3 FDW 0.3.0 released</a></td></tr><tr><td align="left">2022-06-23</td><td align="left"><a href="https://www.postgresql.org/about/news/jdbc-fdw-020-release-2477/">JDBC FDW 0.2.0 release</a></td></tr><tr><td align="left">2022-06-23</td><td align="left"><a href="https://www.postgresql.org/about/news/pgspider-extension-100-is-released-2473/">PGSpider extension 1.0.0 is released</a></td></tr><tr><td align="left">2022-06-23</td><td align="left"><a href="https://www.postgresql.org/about/news/influxdb-fdw-120-released-2475/">InfluxDB FDW 1.2.0 released</a></td></tr><tr><td align="left">2022-06-23</td><td align="left"><a href="https://www.postgresql.org/about/news/timescales-2022-state-of-postgresql-survey-is-now-open-2471/">Timescale&#x27;s 2022 State of PostgreSQL Survey Is Now Open!</a></td></tr><tr><td align="left">2022-06-23</td><td align="left"><a href="https://www.postgresql.org/about/news/pg_ivm-11-released-2478/">pg_ivm 1.1 released</a></td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead><tbody><tr><td align="left">David Z</td><td align="left"><a href="https://postgr.es/p/5mE">One idea of accessing Primary’s buffer blocks</a></td></tr><tr><td align="left">Ryan Lambert</td><td align="left"><a href="https://postgr.es/p/5mC">H3 indexes for performance with PostGIS data</a></td></tr><tr><td align="left">Jan Karremans</td><td align="left"><a href="https://postgr.es/p/5mB">A new North Star has risen</a></td></tr><tr><td align="left">Paul Ramsey</td><td align="left"><a href="https://postgr.es/p/5my">Postgres Indexes, Selectivity, and Statistics</a></td></tr><tr><td align="left">Laurenz Albe</td><td align="left"><a href="https://postgr.es/p/5mx">Debugging deadlocks in PostgreSQL</a></td></tr><tr><td align="left">Paul Ramsey</td><td align="left"><a href="https://postgr.es/p/5mA">Technology, Magic &amp; PostgreSQL</a></td></tr><tr><td align="left">Luca Ferrari</td><td align="left"><a href="https://postgr.es/p/5mz">Ordinality in function queries</a></td></tr><tr><td align="left">Denish Patel</td><td align="left"><a href="https://postgr.es/p/5ms">PSQL Helper: Managing Connections and Simplifying Queries</a></td></tr><tr><td align="left">Andreas Scherbaum</td><td align="left"><a href="https://postgr.es/p/5mr">PostgreSQL Upgrades are hard!</a></td></tr><tr><td align="left">Jimmy Angelakos</td><td align="left"><a href="https://postgr.es/p/5mo">PostgreSQL Community Panel: Upgradability [Postgres Vision 2022]</a></td></tr><tr><td align="left">Ryan Booz</td><td align="left"><a href="https://postgr.es/p/5mn">How We Made Data Aggregation Better and Faster on PostgreSQL With TimescaleDB 2.7</a></td></tr><tr><td align="left">Andreas Scherbaum</td><td align="left"><a href="https://postgr.es/p/5mm">PostgreSQL Project @ GSoC 2022</a></td></tr><tr><td align="left">Paul Ramsey</td><td align="left"><a href="https://postgr.es/p/5mp">Some More PostGIS Users</a></td></tr><tr><td align="left">Adam Johnson</td><td align="left"><a href="https://postgr.es/p/5ml">How to optimize PostgreSQL queries from Django using pgMustard</a></td></tr><tr><td align="left">Frits Hoogland</td><td align="left"><a href="https://postgr.es/p/5mi">Postgres, toast and YugabyteDB</a></td></tr><tr><td align="left">Andreas ‘ads’ Scherbaum</td><td align="left"><a href="https://postgr.es/p/5mh">Hervé Schweitzer</a></td></tr><tr><td align="left">Paul Ramsey</td><td align="left"><a href="https://postgr.es/p/5mj">Some PostGIS Users</a></td></tr></tbody></table><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/en-us/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">无</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">无</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr><tr><td align="left"></td><td align="left"></td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周 Postgres 世界动态 2022w24</title>
       <link href="/PostgresWorld/2022/06/19/weekly_updates_2022w24/"/>
       <url>/PostgresWorld/2022/06/19/weekly_updates_2022w24/</url>
