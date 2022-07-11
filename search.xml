@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>每周 Postgres 世界动态 2022w27</title>
+      <link href="/PostgresWorld/2022/07/10/weekly_updates_2022w27/"/>
+      <url>/PostgresWorld/2022/07/10/weekly_updates_2022w27/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/07/10/weekly_updates_2022w27/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-07-10</td><td align="left"><a href="https://www.postgresql.org/about/news/cloudnativepg-1160-and-1152-released-2482/">CloudNativePG 1.16.0 and 1.15.2 Released!</a></td></tr><tr><td align="left">2022-07-06</td><td align="left"><a href="https://www.postgresql.org/about/news/pgadmin-4-v611-released-2480/">pgAdmin 4 v6.11 Released</a></td></tr><tr><td align="left">2022-07-06</td><td align="left"><a href="https://www.postgresql.org/about/news/announcing-the-release-of-agensgraph-212-2481/">Announcing the release of AgensGraph 2.12</a></td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead><tbody><tr><td align="left">Ryan Lambert</td><td align="left"><a href="https://postgr.es/p/5nl">Postgres 15 improves UNIQUE and NULL</a></td></tr><tr><td align="left">Denish Patel</td><td align="left"><a href="https://postgr.es/p/5nk">Connection Scaling</a></td></tr><tr><td align="left">cary huang</td><td align="left"><a href="https://postgr.es/p/5nj">Maintain a custom PG to PG Connection With libpq’s COPY protocol</a></td></tr><tr><td align="left">Paul Ramsey</td><td align="left"><a href="https://postgr.es/p/5nh">Choosing a PostgreSQL Number Format</a></td></tr><tr><td align="left">Paul Ramsey</td><td align="left"><a href="https://postgr.es/p/5ni">Choosing a PostgreSQL Number Format</a></td></tr><tr><td align="left">Ryan Booz</td><td align="left"><a href="https://postgr.es/p/5ng">State of PostgreSQL 2022—First Findings</a></td></tr><tr><td align="left">Elizabeth Garrett Christensen</td><td align="left"><a href="https://postgr.es/p/5nf">Data To Go: Postgres Logical Replication</a></td></tr><tr><td align="left">Hamid Akhtar</td><td align="left"><a href="https://postgr.es/p/5nd">PostgreSQL Replication and Conflicts</a></td></tr><tr><td align="left">Hans-Juergen Schoenig</td><td align="left"><a href="https://postgr.es/p/5n9">Handling Bonus Programs in SQL</a></td></tr><tr><td align="left">Hubert ‘depesz’ Lubaczewski</td><td align="left"><a href="https://postgr.es/p/5n8">Understanding pg_stat_activity</a></td></tr><tr><td align="left">Egor Rogov</td><td align="left"><a href="https://postgr.es/p/5nb">Queries in PostgreSQL: 5. Nested loop</a></td></tr><tr><td align="left">Andreas ‘ads’ Scherbaum</td><td align="left"><a href="https://postgr.es/p/5n7">Julien Tachoires</a></td></tr><tr><td align="left">Hubert ‘depesz’ Lubaczewski</td><td align="left"><a href="https://postgr.es/p/5n6">How to log selects from specific table?</a></td></tr></tbody></table><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/en-us/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">无</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">无</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr><tr><td align="left"></td><td align="left"></td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周 Postgres 世界动态 2022w26</title>
       <link href="/PostgresWorld/2022/07/03/weekly_updates_2022w26/"/>
       <url>/PostgresWorld/2022/07/03/weekly_updates_2022w26/</url>
