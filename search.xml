@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>每周 Postgres 世界动态 2022w29</title>
+      <link href="/PostgresWorld/2022/07/24/weekly_updates_2022w29/"/>
+      <url>/PostgresWorld/2022/07/24/weekly_updates_2022w29/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/07/24/weekly_updates_2022w29/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-07-23</td><td align="left"><a href="https://postgr.es/p/5o6">PostGIS 3.2.2</a></td></tr><tr><td align="left">2022-07-23</td><td align="left"><a href="https://www.postgresql.org/about/news/pgadmin-user-survey-2487/">pgAdmin User Survey</a></td></tr><tr><td align="left">2022-07-22</td><td align="left"><a href="https://www.postgresql.org/about/news/human-vs-ottertune-ai-postgresql-tuning-contest-10000-cash-prize-2485/">Human vs. OtterTune AI PostgreSQL tuning contest. $10,000 cash prize</a></td></tr><tr><td align="left">2022-07-22</td><td align="left"><a href="https://www.postgresql.org/about/news/coroot-pg-agent-an-open-source-postgres-exporter-for-prometheus-2488/">Coroot-pg-agent - an open-source Postgres exporter for Prometheus</a></td></tr><tr><td align="left">2022-07-20</td><td align="left"><a href="https://postgr.es/p/5nM">PostGIS 3.1.6</a></td></tr><tr><td align="left">2022-07-20</td><td align="left"><a href="https://postgr.es/p/5nK">PostGIS 3.0.6</a></td></tr><tr><td align="left">2022-07-19</td><td align="left"><a href="https://postgr.es/p/5nJ">PostGIS 2.5.7</a></td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead></table><p>|David Z|<a href="https://postgr.es/p/5nR">How to setup Lustre file system and run Postgres on it</a>|<br>|Mark Wong|<a href="https://postgr.es/p/5nQ">PDXPUG August 2022: “Elephants at the Watering Hole” – A World Elephant Day Celebration with SFPUG</a>|<br>|Halil Ozan Akgul|<a href="https://postgr.es/p/5nO">Monitor distributed Postgres activity with citus_stat_activity &amp; citus_lock_waits</a>|<br>|Michael Aboagye|<a href="https://postgr.es/p/5nL">AlloyDB versus PostgreSQL: a performance review</a>|<br>|Julian Markwort|<a href="https://postgr.es/p/5nI">gexec in psql: PostgreSQL poweruser practice</a>|<br>|Michael Christofides|<a href="https://postgr.es/p/5nH">Introducing a new Postgres podcast</a>|<br>|Andreas ‘ads’ Scherbaum|<a href="https://postgr.es/p/5nE">Laura Ricci</a>|</p><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">无</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">无</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr><tr><td align="left"></td><td align="left"></td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周 Postgres 世界动态 2022w28</title>
       <link href="/PostgresWorld/2022/07/17/weekly_updates_2022w28/"/>
       <url>/PostgresWorld/2022/07/17/weekly_updates_2022w28/</url>
