@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>每周 Postgres 世界动态 2022w30</title>
+      <link href="/PostgresWorld/2022/07/31/weekly_updates_2022w30/"/>
+      <url>/PostgresWorld/2022/07/31/weekly_updates_2022w30/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/01/1f38cc2d3af1869e.png" alt="每周 Postgres 世界动态"></p><p><a href="https://www.slackideas.com/PostgresWorld/2022/07/31/weekly_updates_2022w30/">本文全网唯一源地址</a></p><h1 id="产品新闻"><a href="#产品新闻" class="headerlink" title="产品新闻"></a>产品新闻</h1><p>信息来源：<a href="https://www.postgresql.org/about/newsarchive/">网址</a>基础上整理。</p><table><thead><tr><th align="left">时间</th><th align="left">消息</th></tr></thead><tbody><tr><td align="left">2022-07-28</td><td align="left"><a href="https://www.postgresql.org/about/news/pg_ivm-12-released-2489/">pg_ivm 1.2 released</a></td></tr></tbody></table><h1 id="博客动态"><a href="#博客动态" class="headerlink" title="博客动态"></a>博客动态</h1><p>信息来源：<a href="https://planet.postgresql.org/">网址</a></p><table><thead><tr><th align="left">作者</th><th align="left">文章</th></tr></thead><tbody><tr><td align="left">Federico Campoli</td><td align="left"><a href="https://postgr.es/p/5ok">Comet and Shadow</a></td></tr><tr><td align="left">Samay Sharma</td><td align="left"><a href="https://postgr.es/p/5oj">Debugging Postgres autovacuum problems: 13 tips</a></td></tr><tr><td align="left">Devrim GÜNDÜZ</td><td align="left"><a href="https://postgr.es/p/5oi">Pagila 3.0.0 is out with shiny new features and bugfixes</a></td></tr><tr><td align="left">Devrim GÜNDÜZ</td><td align="left"><a href="https://postgr.es/p/5of">How to install PostgreSQL and PostGIS on Rocky Linux 9</a></td></tr><tr><td align="left">Ryan Booz</td><td align="left"><a href="https://postgr.es/p/5oc">State of PostgreSQL 2022 - 13 Tools That Aren&#x27;t psql</a></td></tr><tr><td align="left">Laurenz Albe</td><td align="left"><a href="https://postgr.es/p/5ob">Better SQL functions in PostgreSQL v14</a></td></tr><tr><td align="left">Jonathan Katz</td><td align="left"><a href="https://postgr.es/p/5od">BEGIN ATOMIC: a better way to create functions in PostgreSQL 14</a></td></tr><tr><td align="left">Elizabeth Garrett Christensen</td><td align="left"><a href="https://postgr.es/p/5o9">Partitioning with Native Postgres and pg_partman</a></td></tr><tr><td align="left">Andreas ‘ads’ Scherbaum</td><td align="left"><a href="https://postgr.es/p/5oa">Elizabeth Garrett Christensen</a></td></tr><tr><td align="left">Michael Christofides</td><td align="left"><a href="https://postgr.es/p/5o8">Using BUFFERS for query optimization</a></td></tr></tbody></table><h1 id="云厂商"><a href="#云厂商" class="headerlink" title="云厂商"></a>云厂商</h1><p>信息来源：</p><ol><li><a href="https://cloud.google.com/sql/docs/postgres/release-notes">Release Notes - Google Cloud Platform</a></li><li><a href="https://www.alibabacloud.com/help/zh/doc-detail/406252.html">News - Alibaba Cloud RDS</a></li><li><a href="https://azure.microsoft.com/en-us/updates/?product=postgresql">Updates - Azure PostgreSQL</a></li><li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/WhatsNew.html">News - AWS RDS</a></li><li><a href="https://support.huaweicloud.com/wtsnew-rds/">News - HuaweiCloud RDS</a></li><li><a href="https://cloud.tencent.com/document/product/409/48651">News - TencentCloud PostgreSQL</a></li></ol><table><thead><tr><th align="left">厂商</th><th align="left">动态</th></tr></thead><tbody><tr><td align="left">Google Cloud Platform</td><td align="left">1. <strong>[Bugfix]</strong> For PostgreSQL versions 9.6 to 13, the [PostgreSQL version].R20220710.01_00 maintenance version caused a behavior change for configuration parameters: Session-level configuration parameters with dashes (-) cannot be set. Now you can apply a fix by performing a self-service maintenance update to the latest release.<br/>2. <strong>[Feature]</strong> PostgreSQL minor versions and extension versions are now available: 14.3 -&gt; 14.4, 13.6 -&gt; 13.7, 12.10 -&gt; 12.11, 11.15 -&gt; 11.16, 10.20 -&gt; 10.21. <br/> 3. <strong>[Feature]</strong> Added information about checking the LC_COLLATE value for your databases before performing a major version upgrade of the databases for your Cloud SQL for PostgreSQL instance.</td></tr><tr><td align="left">Alibaba Cloud</td><td align="left">无</td></tr><tr><td align="left">Azure</td><td align="left">无</td></tr><tr><td align="left">AWS</td><td align="left">无</td></tr><tr><td align="left">HuaweiCloud</td><td align="left">无</td></tr><tr><td align="left">TencentCloud</td><td align="left">无</td></tr><tr><td align="left"></td><td align="left"></td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 云计算 </tag>
+            
+            <tag> 数据库 </tag>
+            
+            <tag> Cloud Compute </tag>
+            
+            <tag> Database </tag>
+            
+            <tag> PostgreSQL </tag>
+            
+            <tag> 每周动态 </tag>
+            
+            <tag> Weekly Update </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周 Postgres 世界动态 2022w29</title>
       <link href="/PostgresWorld/2022/07/24/weekly_updates_2022w29/"/>
       <url>/PostgresWorld/2022/07/24/weekly_updates_2022w29/</url>
